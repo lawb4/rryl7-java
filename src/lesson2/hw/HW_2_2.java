@@ -15,28 +15,21 @@ package lesson2.hw;
 public class HW_2_2 {
     public static void main(String[] args) {
         int coins = 1000;
-        //int owner = 1;
-        int captain = 1;
-        int crewWithoutCaptainCount = 10;
-        int crewWithCaptainCount = crewWithoutCaptainCount + captain;
+        int crewSize = 21;
 
         int coinsToOwner = coins / 2;
-        int coinsToCaptain = coinsToOwner / 2;
+        int coinsToCaptain = (coins - coinsToOwner) / 2;
         int coinsToEachCrewMember =
-                coinsToCaptain / (crewWithoutCaptainCount + captain);
+                (coins - coinsToOwner - coinsToCaptain) / crewSize;
 
-        System.out.println(coinsToOwner);
-        System.out.println(coinsToCaptain);
-        System.out.println(coinsToEachCrewMember);
+        int coinsDistributed = coinsToOwner + coinsToCaptain + (coinsToEachCrewMember * crewSize);
 
-        System.out.println(isCorrectCoinsDivision
-                (coinsToOwner, coinsToCaptain, coinsToEachCrewMember, crewWithCaptainCount));
-    }
+        System.out.println("coins to owner: " + coinsToOwner);
+        System.out.println("coins to captain: " + coinsToCaptain);
+        System.out.println("coins to each crew member: " + coinsToEachCrewMember);
+        System.out.println("coins distributed: " + coinsDistributed);
+        System.out.println("coins leftover: " + (coins - coinsDistributed));
 
-    public static boolean isCorrectCoinsDivision
-            (int coinsToOwner, int coinsToCaptain, int coinsToCrew, int crewWithCaptainCount) {
 
-        int allCoins = coinsToOwner + coinsToCaptain + (coinsToCrew * crewWithCaptainCount)
-        return allCoins % 2 == 0;
     }
 }
