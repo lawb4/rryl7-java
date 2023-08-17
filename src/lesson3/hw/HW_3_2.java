@@ -24,7 +24,7 @@ public class HW_3_2 {
         if (a < 100) {
             System.out.println("a < 100");
         }
-        if (a / 2 > 20) {
+        if (a / 2d > 20) {
             System.out.println("a / 2 > 20");
         }
         if (a > 5 && a <= 40) {
