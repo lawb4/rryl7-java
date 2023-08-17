@@ -13,10 +13,11 @@ public class HW_3_3 {
     public static void main(String[] args) {
         int a = 10;
         int b = 25;
+        boolean isEven = (a + b) % 2 == 0;
 
-        if ((a + b) % 2 == 0) {
+        if (isEven) {
             System.out.println("maybe a and b are even");
-        } else if ((a + b) % 2 != 0) {
+        } else if (!isEven) {
             System.out.println("some variable is odd");
         }
     }
