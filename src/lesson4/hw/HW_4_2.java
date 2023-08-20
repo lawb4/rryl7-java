@@ -12,9 +12,9 @@ public class HW_4_2 {
         int num = 5;
         int result = 1;
 
-        do {
+        for (int i = 1; result * num < 10000; i++) {
             result *= num;
-            System.out.println(result);
-        } while (result < 10000);
+            System.out.println("num's power = " + i + ", result = " + result);
+        }
     }
 }
