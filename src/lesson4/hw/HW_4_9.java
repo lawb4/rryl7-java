@@ -12,18 +12,21 @@ package lesson4.hw;
 public class HW_4_9 {
     public static void main(String[] args) {
 
-        int[] arr = {-45, -65, -34, 65, 0, 1, 78, 143, -69, -65};
+        int[] arr = {-75, -65, -34, 65, 0, 1, 78, 143, -69, -65};
+        // init a boolean to store the decision value
+        boolean isSorted = false;
 
-        int temp = 0;
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - i - 1; j++) {
-                if (arr[j] < arr[j + 1]) {
-                    temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
+        // checking algorithm
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i - 1] <= arr[i]) {
+                isSorted = true;
+            } else {
+                isSorted = false;
+                break;
             }
-            System.out.println(temp);
         }
+
+        // output a string value depending on the boolean value
+        System.out.println("Is the Array sorted ASC? > " + isSorted);
     }
 }
