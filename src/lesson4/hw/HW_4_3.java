@@ -12,13 +12,18 @@ package lesson4.hw;
 
 public class HW_4_3 {
     public static void main(String[] args) {
-
-        int num1 = 40;
-        int num2 = 60;
-
-        while (num1 >= 40 && num2 <= 60) {
-
+        // variant 1
+        for (int i = 40; i <= 60; i++) {
+            if (i % 4 == 0) {
+                System.out.println(i);
+            }
         }
 
+        System.out.println("---");
+
+        // variant 2
+        for (int i = 40; i <= 60 && i % 4 == 0; i += 4) {
+            System.out.println(i);
+        }
     }
 }
