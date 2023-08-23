@@ -22,7 +22,7 @@ public class HW_4_3 {
         System.out.println("---");
 
         // variant 2
-        for (int i = 40; i <= 60 && i % 4 == 0; i += 4) {
+        for (int i = 40; i <= 60; i += 4) {
             System.out.println(i);
         }
     }
