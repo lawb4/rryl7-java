@@ -14,18 +14,15 @@ public class HW_4_9 {
 
         int[] arr = {-75, -65, -34, 65, 0, 1, 78, 143, -69, -65};
         // init a boolean to store the decision value
-        boolean isSorted = false;
+        boolean isSorted = true;
 
         // checking algorithm
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i - 1] <= arr[i]) {
-                isSorted = true;
-            } else {
+            if (arr[i - 1] > arr[i]) {
                 isSorted = false;
                 break;
             }
         }
-
         // output a string value depending on the boolean value
         System.out.println("Is the Array sorted ASC? > " + isSorted);
     }
