@@ -18,16 +18,17 @@ public class HW_4_8 {
         int countZeroes = 0;
 
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 0) {
+            int elem = arr[i];
+            if (elem > 0) {
                 countPositive++;
-            } else if (arr[i] < 0) {
+            } else if (elem < 0) {
                 countNegative++;
             } else {
                 countZeroes++;
             }
         }
         System.out.println("Counter of All values in Array = " + arr.length);
-        System.out.println("Counter of Posivites = " + countPositive);
+        System.out.println("Counter of Positives = " + countPositive);
         System.out.println("Counter of Negatives = " + countNegative);
         System.out.println("Counter of Zeroes = " + countZeroes);
 
