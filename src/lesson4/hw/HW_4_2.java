@@ -16,5 +16,12 @@ public class HW_4_2 {
             result *= num;
             System.out.println("num's power = " + i + ", result = " + result);
         }
+
+        System.out.println();
+
+        // Solution from Review
+        for (int i = 1; i < 10000; i *= num) {
+            System.out.println(i);
+        }
     }
 }
