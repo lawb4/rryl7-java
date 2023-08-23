@@ -15,8 +15,9 @@ public class HW_4_5 {
         int max = Integer.MIN_VALUE;
 
         for (int i = 0; i < array.length; i++) {
-            if (max < array[i]) {
-                max = array[i];
+            int elem = array[i];
+            if (max < elem) {
+                max = elem;
             }
         }
         System.out.println(max);
