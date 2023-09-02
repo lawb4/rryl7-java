@@ -24,7 +24,22 @@ public class HW_5_3 {
                 System.out.print(i + " ");
             }
         }
-        // stub for 2nd variant (waiting for hw review)
-        // s.toLowerCase().contains("рит")) {
+
+        System.out.println();
+
+        // 2nd variant
+        for (int i = 0; i < s.length() - 3; i++) {
+            if (s.substring(i, i + 3).equalsIgnoreCase("рит")) {
+                System.out.print(i + " ");
+            }
+        }
+
+        System.out.println();
+        // 3rd variant
+        int index = s.toLowerCase().indexOf("рит");
+        while (index != -1) {
+            System.out.print(index + " ");
+            index = s.toLowerCase().indexOf("рит", index + 1);
+        }
     }
 }
