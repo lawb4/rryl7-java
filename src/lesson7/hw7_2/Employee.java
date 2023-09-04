@@ -13,7 +13,13 @@ public class Employee {
     }
 
     public void setSalary(double salary) {
-        this.salary = salary;
+        if (salary < 0) {
+            this.salary = 0;
+        } else {
+            this.salary = salary;
+        }
+        // 2nd variant : return value closer to positive infinity
+        //this.salary = Math.max(salary, 0);
     }
 
     public double getSalary() {
