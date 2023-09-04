@@ -6,7 +6,7 @@ public class Employee {
     String name;
     int age;
     boolean sex;
-    double salary;
+    private double salary; // add `private` to comply with OOP conventions
 
     public boolean isSameName(Employee employee) {
         return this.name.equalsIgnoreCase(employee.name);
