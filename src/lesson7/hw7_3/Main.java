@@ -16,10 +16,9 @@ public class Main {
         Employee emp3 = new Employee();
         emp3.setSalary(376.673);
 
-        Salary totalSalary = new Salary();
-
         Employee[] employeesArray = {emp1, emp2, emp3};
 
-        System.out.println(totalSalary.getSum(employeesArray));
+        // can use `getSum` without instantiation because it is `static`
+        System.out.println(Salary.getSum(employeesArray));
     }
 }
