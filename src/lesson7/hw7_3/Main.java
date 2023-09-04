@@ -14,7 +14,7 @@ public class Main {
         Employee emp2 = new Employee();
         emp2.setSalary(200.0);
         Employee emp3 = new Employee();
-        emp3.setSalary(376);
+        emp3.setSalary(376.673);
 
         Salary totalSalary = new Salary();
 
