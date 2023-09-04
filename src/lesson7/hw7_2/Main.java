@@ -22,7 +22,7 @@ public class Main {
         emp4.name = "Yanina";
 
         System.out.println(emp1.isSameName(emp1)); //true
-        System.out.println(emp1.isSameName(emp2)); //false
+        System.out.println(emp1.isSameName(emp2)); //true (because of isSameName() method implementation
         System.out.println(emp1.isSameName(emp3)); //true
         System.out.println(emp1.isSameName(emp4)); //false
     }

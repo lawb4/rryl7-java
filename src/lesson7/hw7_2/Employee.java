@@ -9,7 +9,7 @@ public class Employee {
     double salary;
 
     public boolean isSameName(Employee employee) {
-        return this.name.equals(employee.name);
+        return this.name.equalsIgnoreCase(employee.name);
     }
 
     public void setSalary(double salary) {
