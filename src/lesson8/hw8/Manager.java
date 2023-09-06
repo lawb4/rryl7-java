@@ -8,21 +8,25 @@ public class Manager extends Employee {
         this.amountOfSubordinates = amountOfSubordinates;
     }
 
+    public int getPercentForEachSubordinate() {
+        return 3;
+    }
+
     public void setAmountOfSubordinates(int amountOfSubordinates) {
         this.amountOfSubordinates = amountOfSubordinates;
     }
 
     public int getAmountOfSubordinates() {
-        return amountOfSubordinates;
+        return this.amountOfSubordinates;
     }
 
     @Override
     public double getSalary() {
         if (getAmountOfSubordinates() == 0) {
-            return super.getSalary();
+            return super.getBaseSalary();
         }
-        return super.getBaseSalary() * getAmountOfSubordinates() / 100 * 3;
-        // 230904 idu why the below line of code is not considered the same as the above
-        //return super.getBaseSalary() * ((double) getAmountOfSubordinates() / 100 * 3);
+        // get 3% bonus for every subordinate
+        double bonusFormula = (double) amountOfSubordinates / 100 * getPercentForEachSubordinate();
+        return super.getBaseSalary() * bonusFormula;
     }
 }

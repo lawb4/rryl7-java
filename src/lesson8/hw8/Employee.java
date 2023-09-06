@@ -1,6 +1,6 @@
 package lesson8.hw8;
 
-public class Employee {
+public abstract class Employee {
     private String name;
     private double salary;
 
@@ -21,9 +21,7 @@ public class Employee {
     public void setName(String name) {
         this.name = name;
     }
-    public double getSalary() {
-        return this.getBaseSalary();
-    }
+    public abstract double getSalary();
 
     @Override
     public String toString() {

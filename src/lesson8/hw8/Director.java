@@ -7,10 +7,11 @@ public class Director extends Manager {
     }
 
     @Override
+    public int getPercentForEachSubordinate() {
+        return 9;
+    }
+    @Override
     public double getSalary() {
-        if (getAmountOfSubordinates() == 0) {
-            return super.getSalary();
-        }
-        return super.getSalary() * ((double) getAmountOfSubordinates() / 100 * 9);
+        return super.getSalary();
     }
 }

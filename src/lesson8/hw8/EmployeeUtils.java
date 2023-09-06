@@ -2,19 +2,18 @@ package lesson8.hw8;
 
 import java.util.ArrayList;
 
-public final class UtilityClass {
-    private static final double ZERO_BONUS = 0;
+public final class EmployeeUtils {
     public static Employee getEmployeeByName(Employee[] employees, String name) {
         for (Employee employee : employees) {
             if (employee.getName().equalsIgnoreCase(name)) {
                 return employee;
             }
         }
-        // as of today, idk how to correctly bypass the `null` reference
+        // as of 230905, idk how to correctly bypass the `null` reference
         return null;
     }
 
-    public static Employee[] getEmployeesBySubstringInName(Employee[] employees, String substring) {
+    public static Employee[] getEmployeesBySubstringName(Employee[] employees, String substring) {
         ArrayList<Employee> foundEmployeesList = new ArrayList<>();
         for (Employee employee : employees) {
             if (employee.getName().contains(substring)) {
@@ -44,8 +43,9 @@ public final class UtilityClass {
         double highestSalary = employees[0].getSalary();
         // comparing the salary of the first employee with other employees
         for (Employee employee : employees) {
-            if (highestSalary < employee.getSalary()) {
-                highestSalary = employee.getSalary();
+            double salary = employee.getSalary();
+            if (salary > highestSalary) {
+                highestSalary = salary;
             }
         }
         return highestSalary;
@@ -56,8 +56,9 @@ public final class UtilityClass {
         double lowestSalary = employees[0].getSalary();
         // comparing the salary of the first employee with other employees
         for (Employee employee : employees) {
-            if (lowestSalary > employee.getSalary()) {
-                lowestSalary = employee.getSalary();
+            double salary = employee.getSalary();
+            if (salary < lowestSalary) {
+                lowestSalary = salary;
             }
         }
         return lowestSalary;
@@ -68,8 +69,9 @@ public final class UtilityClass {
         int lowestAmountOfSubordinates = managers[0].getAmountOfSubordinates();
         // comparing the amount of subordinates of the first manager with other managers
         for (Manager manager : managers) {
-            if (lowestAmountOfSubordinates > manager.getAmountOfSubordinates()) {
-                lowestAmountOfSubordinates = manager.getAmountOfSubordinates();
+            int amountOfSubordinates = manager.getAmountOfSubordinates();
+            if (amountOfSubordinates < lowestAmountOfSubordinates) {
+                lowestAmountOfSubordinates = amountOfSubordinates;
             }
         }
         return lowestAmountOfSubordinates;
@@ -80,32 +82,39 @@ public final class UtilityClass {
         int highestAmountOfSubordinates = managers[0].getAmountOfSubordinates();
         // comparing the amount of subordinates of the first manager with other managers;
         for (Manager manager : managers) {
-            if (highestAmountOfSubordinates < manager.getAmountOfSubordinates()) {
-                highestAmountOfSubordinates = manager.getAmountOfSubordinates();
+            int amountOfSubordinates = manager.getAmountOfSubordinates();
+            if (amountOfSubordinates > highestAmountOfSubordinates) {
+                highestAmountOfSubordinates = amountOfSubordinates;
             }
         }
         return highestAmountOfSubordinates;
     }
 
     public static double getHighestSalaryBonusAmongManagers(Manager[] managers) {
-        double highestBonusAmount = ZERO_BONUS;
+        // assuming the first manager has the highest bonus
+        double highestBonus = managers[0].getSalary();
+        // comparing the bonus of the 1st manager with the others'
         for (Manager manager : managers) {
-            double bonusAmount = manager.getBaseSalary() - manager.getSalary();
-            if (highestBonusAmount < bonusAmount) {
-                highestBonusAmount = bonusAmount;
+            // it seems `getSalary()` = bonus
+            double bonus = manager.getSalary();
+            if (highestBonus < bonus) {
+                highestBonus = bonus;
             }
         }
-        return highestBonusAmount;
+        return highestBonus;
     }
 
     public static double getLowestSalaryBonusAmongManagers(Manager[] managers) {
-        double lowestBonusAmount = ZERO_BONUS;
+        // assuming the first manager has the lowest bonus
+        double lowestBonus = managers[0].getSalary();
+        // comparing the bonus of the 1st manager with the others'
         for (Manager manager : managers) {
-            double bonusAmount = manager.getBaseSalary() - manager.getSalary();
-            if (lowestBonusAmount > bonusAmount) {
-                lowestBonusAmount = bonusAmount;
+            // it seems `getSalary()` = bonus
+            double bonus = manager.getSalary();
+            if (lowestBonus > bonus) {
+                lowestBonus = bonus;
             }
         }
-        return lowestBonusAmount;
+        return lowestBonus;
     }
 }
