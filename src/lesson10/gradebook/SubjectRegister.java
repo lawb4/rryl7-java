@@ -27,6 +27,10 @@ public class SubjectRegister {
         return this.rows.length;
     }
 
+    public void giveGrade(String studentName, int lessonNumber, int grade) {
+        giveGrade(studentName, lessonNumber, new Grade(grade));
+    }
+
     public void giveGrade(String studentName, int lessonNumber, Grade grade) {
 
         if (checkIsLocked()) {
